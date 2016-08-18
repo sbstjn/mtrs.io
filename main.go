@@ -6,10 +6,14 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/marpaia/graphite-golang"
 )
 
 func main() {
 	port := os.Getenv("PORT")
+	graphiteKey := os.Getenv("HOSTEDGRAPHITE_APIKEY")
+	Graphite, _ := graphite.NewGraphite("df6c1ae2.carbon.hostedgraphite.com", 2003)
+	Graphite.SimpleSend(graphiteKey+".stats.graphite_loaded", "1")
 
 	if port == "" {
 		log.Fatal("$PORT must be set")

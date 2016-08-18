@@ -1,34 +1,38 @@
 {
 	"ImportPath": "github.com/sbstjn/mtrs.io",
-	"GoVersion": "go1.6",
+	"GoVersion": "go1.7",
 	"GodepVersion": "v74",
 	"Deps": [
 		{
 			"ImportPath": "github.com/gin-gonic/gin",
-			"Comment": "v1.0rc1-268-gf931d1e",
-			"Rev": "f931d1ea80ae95a6fc739213cdd9399bd2967fb6"
+			"Comment": "v1.0rc1-262-g5caaac4",
+			"Rev": "5caaac4c5c712a9e7a7de29e6c24ef46c753017f"
 		},
 		{
 			"ImportPath": "github.com/gin-gonic/gin/binding",
-			"Comment": "v1.0rc1-268-gf931d1e",
-			"Rev": "f931d1ea80ae95a6fc739213cdd9399bd2967fb6"
+			"Comment": "v1.0rc1-262-g5caaac4",
+			"Rev": "5caaac4c5c712a9e7a7de29e6c24ef46c753017f"
 		},
 		{
 			"ImportPath": "github.com/gin-gonic/gin/render",
-			"Comment": "v1.0rc1-268-gf931d1e",
-			"Rev": "f931d1ea80ae95a6fc739213cdd9399bd2967fb6"
+			"Comment": "v1.0rc1-262-g5caaac4",
+			"Rev": "5caaac4c5c712a9e7a7de29e6c24ef46c753017f"
+		},
+		{
+			"ImportPath": "github.com/golang/protobuf/proto",
+			"Rev": "f592bd283e9ef86337a432eb50e592278c3d534d"
 		},
 		{
 			"ImportPath": "github.com/manucorporat/sse",
 			"Rev": "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d"
 		},
 		{
-			"ImportPath": "golang.org/x/net/context",
-			"Rev": "07b51741c1d6423d4a6abab1c49940ec09cb1aaf"
+			"ImportPath": "github.com/marpaia/graphite-golang",
+			"Rev": "bea0c295debd84f9c80050cea3c6aeb3dd448f7c"
 		},
 		{
-			"ImportPath": "github.com/golang/protobuf/proto",
-			"Rev": "f592bd283e9ef86337a432eb50e592278c3d534d"
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "07b51741c1d6423d4a6abab1c49940ec09cb1aaf"
 		},
 		{
 			"ImportPath": "gopkg.in/go-playground/validator.v8",
