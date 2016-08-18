@@ -26,6 +26,24 @@ func main() {
 		c.HTML(http.StatusOK, "index.html", nil)
 	})
 
+	router.GET("/_/:factor/:rating", func(c *gin.Context) {
+		factor := c.Param("factor")
+		rating := c.Param("rating")
+
+		widthFactor := 4 + len(factor)*8
+		widthRating := 4 + len(rating)*8
+
+		c.HTML(http.StatusOK, "shield.svg", gin.H{
+			"factor":         factor,
+			"rating":         rating,
+			"width":          widthFactor + widthRating,
+			"widthFactor":    widthFactor,
+			"widthRating":    widthRating,
+			"positionFactor": widthFactor / 2,
+			"positionRating": widthFactor + (widthRating / 2),
+		})
+	})
+
 	router.Run(":" + port)
 	/*
 		port := os.Getenv("PORT")
