@@ -1,7 +1,9 @@
 package main
 
 import (
+	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus"
@@ -23,6 +25,14 @@ func init() {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	} else {
+		log.Print("Using port ", port)
+	}
+
 	r := gin.Default()
 
 	r.GET("/", func(c *gin.Context) {
@@ -30,13 +40,11 @@ func main() {
 		requestCounter.WithLabelValues("/").Inc()
 	})
 
-	authorized := r.Group("/metrics", gin.BasicAuth(gin.Accounts{
+	r.Group("/metrics", gin.BasicAuth(gin.Accounts{
 		"prometheus": "secret",
-	}))
-
-	authorized.GET("/", func(c *gin.Context) {
+	})).GET("/", func(c *gin.Context) {
 		prometheus.Handler().ServeHTTP(c.Writer, c.Request)
 	})
 
-	r.Run("localhost:5000")
+	r.Run(":" + port)
 }
